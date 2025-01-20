@@ -2,9 +2,9 @@ import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Main {
-    public static AtomicInteger counter_Var_3 = new AtomicInteger();
-    public static AtomicInteger counter_Var_4 = new AtomicInteger();
-    public static AtomicInteger counter_Var_5 = new AtomicInteger();
+    public static AtomicInteger COUNTER_VAR_3 = new AtomicInteger();
+    public static AtomicInteger COUNTER_VAR_4 = new AtomicInteger();
+    public static AtomicInteger COUNTER_VAR_5 = new AtomicInteger();
 
     public static void main(String[] args) throws InterruptedException {
         Random random = new Random();
@@ -33,21 +33,21 @@ public class Main {
         });
         identical.start();
 
-        Thread ascending_Order = new Thread(() -> {
+        Thread ascending_order = new Thread(() -> {
             for (String text : texts) {
                 if (!Generate.FlipOver(text) && !Generate.Identical(text) && Generate.Ascending_Order(text)) {
                     Generate.incrementCounter(text.length());
                 }
             }
         });
-        ascending_Order.start();
+        ascending_order.start();
 
         identical.join();
-        ascending_Order.join();
+        ascending_order.join();
         flipOver.join();
 
-        System.out.println("Слов с длиной 3: " + counter_Var_3 + " шт");
-        System.out.println("Слов с длиной 4: " + counter_Var_4 + " шт");
-        System.out.println("Слов с длиной 5: " + counter_Var_5 + " шт");
+        System.out.println("Слов с длиной 3: " + COUNTER_VAR_3 + " шт");
+        System.out.println("Слов с длиной 4: " + COUNTER_VAR_4 + " шт");
+        System.out.println("Слов с длиной 5: " + COUNTER_VAR_5 + " шт");
     }
 }

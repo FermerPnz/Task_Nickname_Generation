@@ -34,9 +34,9 @@ public class Generate {
 
     public static void incrementCounter(int text) {
         switch (text) {
-            case 3 -> Main.counter_Var_3.incrementAndGet();
-            case 4 -> Main.counter_Var_4.incrementAndGet();
-            case 5 -> Main.counter_Var_5.incrementAndGet();
+            case 3 -> Main.COUNTER_VAR_3.incrementAndGet();
+            case 4 -> Main.COUNTER_VAR_4.incrementAndGet();
+            case 5 -> Main.COUNTER_VAR_5.incrementAndGet();
         }
     }
 }
